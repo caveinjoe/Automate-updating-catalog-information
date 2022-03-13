@@ -14,8 +14,11 @@ def format_image(dir):
                     img = Image.open(og_path)
                     file_name = Path(og_path).stem
                     file_path = os.path.join(path,file_name) + ".jpeg"
-                    img.convert("RGB").resize((600,400)).save(file_path)
-                    img.close()
+                    try:
+                        img.convert("RGB").resize((600,400)).save(file_path, "JPEG")
+                        img.close()
+                    except Exception as e:
+                        print("Failure to convert {} with : {}".format(file, e))
 
 
 if __name__=="__main__":
