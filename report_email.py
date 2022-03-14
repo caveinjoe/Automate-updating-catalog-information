@@ -9,7 +9,7 @@ today = datetime.date.today().strftime('%Y-%m-%d')
 
 def process_text(dir):
     for file in os.listdir(dir):
-        if file.endwith(".txt")
+        if file.endwith(".txt"):
             file_path = os.path.join(dir, file)
             with open(file_path, 'r') as f:
                 content = f.readlines()
