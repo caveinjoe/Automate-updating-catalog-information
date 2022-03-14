@@ -28,7 +28,8 @@ def send_error_email(type):
     receiver = "<username>@example.com"
     subject = type
     body = "Please check your system and resolve the issue as soon as possible."
-    emails.generate_email(sender, receiver, subject, body)
+    message = emails.generate_email(sender, receiver, subject, body)
+    emails.send_email(message)
     
 def error_type():
     if not check_cpu_usage():
