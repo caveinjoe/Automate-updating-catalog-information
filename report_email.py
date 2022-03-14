@@ -20,7 +20,7 @@ def process_text(dir):
     return text
 
 if __name__=="__main__":
-    text = process_text(sys.argv[1]))
+    text = process_text(sys.argv[1])
     title = "Processed Update on {}".format(today)
     reports.generate_report("/tmp/processed.pdf", title, text)
     
