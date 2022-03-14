@@ -19,7 +19,6 @@ def format_image(dir):
                 except Exception as e:
                     print("Failure to convert {} with : {}".format(file, e))
 
-
 if __name__=="__main__":
     dir = sys.argv[1]
     format_image(dir)

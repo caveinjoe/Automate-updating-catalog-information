@@ -4,7 +4,7 @@ import sys
 import os
 import requests
 
-url = "http://localhost/upload/"
+url = "http://<localhost>/upload/"
 
 def upload_image(dir):
     for file in os.listdir(dir):
