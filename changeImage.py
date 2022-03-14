@@ -6,14 +6,13 @@ from PIL import Image
 from pathlib import Path
 
 def format_image(dir):
-    path = "/supplier-data/images"
     for root, directory, files in os.walk(dir):
         for file in files:
             if file[0] != '.' and 'tiff' in file:
                     og_path = os.path.join(root,file)
                     img = Image.open(og_path)
                     file_name = Path(og_path).stem
-                    file_path = os.path.join(path,file_name) + ".jpeg"
+                    file_path = os.path.join(root,file_name) + ".jpeg"
                     try:
                         img.convert("RGB").resize((600,400)).save(file_path, "JPEG")
                         img.close()
