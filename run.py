@@ -12,8 +12,7 @@ def post_fruit(dir):
         if file.endswith(".txt"):
             file_path = os.path.join(dir, file)
             with open(file_path, 'r') as f:
-                content = f.read()
-                content = content.split("\n")
+                content = f.readlines()
                 fruit_name = content[0]
                 fruit_weight = int(content[1].strip(" lbs"))
                 desc = content[2]
